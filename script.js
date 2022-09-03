@@ -90,20 +90,19 @@ class App {
 						0: { icon: icon }, //Gets the primary weather condition
 					},
 				} = time;
-
-				console.log(high_temp, low_temp);
+				console.log(low_temp);
 
 				const img = document.createElement('img');
 				img.src = `http://openweathermap.org/img/wn/${icon}.png`;
 
 				const temperature_container = document.createElement('div');
 				temperature_container.className = 'temperature-container';
+
 				const high_temp_label = document.createElement('label');
-				high_temp_label.className = 'temperature-high';
-				high_temp_label.innerText = high_temp;
+				high_temp_label.innerText = Math.round(high_temp);
+
 				const low_temp_label = document.createElement('label');
-				low_temp_label.className = 'temperature-low';
-				high_temp_label.innerText = low_temp;
+				low_temp_label.innerText = Math.round(low_temp);
 
 				temperature_container.append(high_temp_label, low_temp_label);
 				day_container.append(day_label, img, temperature_container);
