@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+}
+.weather-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	border: 5px solid blue;
+}
+
+.day-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* min-width: 150px; */
+	/* max-width: 150px; */
+	border: 5px solid red;
+}
+
+.weather-container > .day-container:not(:first-child) {
+	margin-left: -5px;
+}
