@@ -42,10 +42,6 @@ const url_5dayforecast = `http://api.openweathermap.org/data/2.5/forecast?lat=${
 // Get the data for 5 days
 // Map the data to the UI
 
-// Get data
-// Filter the response for today's date
-// 5 days at a specific time
-
 class App {
 	// constructor() {
 	// 	this.getWeatherData();
