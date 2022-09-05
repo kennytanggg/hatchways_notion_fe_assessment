@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass&family=Roboto&display=swap');
 * {
 	margin: 0;
 	padding: 0;
 	border: none;
 	box-sizing: border-box;
+	font-family: 'Overpass', sans-serif;
 }
+
 .weather-container {
 	display: flex;
 	justify-content: center;
@@ -18,11 +21,39 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	/* min-width: 150px; */
-	/* max-width: 150px; */
-	border: 5px solid red;
+	/* border: 5px solid red; */
+	padding: 10px;
+}
+
+.day-container:first-child {
+	background: #e2e2e2;
+}
+
+.day-container > label:first-child {
+	color: #a6a6a6;
+	letter-spacing: 0.05rem;
+	font-weight: 600;
+	/* border: green 5px solid; */
 }
 
 .weather-container > .day-container:not(:first-child) {
 	margin-left: -5px;
+}
+
+.temperature-container {
+	display: flex;
+	/* border: purple 1px solid; */
+	justify-content: space-evenly;
+	width: 100%;
+	letter-spacing: 0.03rem;
+}
+
+.temperature-high {
+	font-weight: 600;
+	color: #000;
+}
+
+.temperature-low {
+	font-weight: 600;
+	color: #a9a9a9;
 }

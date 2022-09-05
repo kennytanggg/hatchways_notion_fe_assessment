@@ -58,6 +58,7 @@ class App {
 
 	get5DayForecast(data) {
 		// Return today's high and low temperatures, and the next 4 days
+		// Map data to UI (day, temp_high, temp_low, description, img)
 		data.list.forEach((time) => {
 			if (time.dt_txt.includes('12:00:00')) {
 				//#region
@@ -78,7 +79,6 @@ class App {
 				day_label.innerText = DateUtil.convertDayToText(new Date(time.dt_txt).getDay());
 
 				console.log(time);
-				// Map data to UI (day, temp_high, temp_low, description, img)
 
 				let {
 					main: { temp_max: high_temp, temp_min: low_temp },
@@ -89,16 +89,18 @@ class App {
 				console.log(low_temp);
 
 				const img = document.createElement('img');
-				img.src = `http://openweathermap.org/img/wn/${icon}.png`;
+				img.src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
 				const temperature_container = document.createElement('div');
 				temperature_container.className = 'temperature-container';
 
 				const high_temp_label = document.createElement('label');
-				high_temp_label.innerText = Math.round(high_temp);
+				high_temp_label.innerHTML = `${Math.round(high_temp)}&deg`;
+				high_temp_label.className = 'temperature-high';
 
 				const low_temp_label = document.createElement('label');
-				low_temp_label.innerText = Math.round(low_temp);
+				low_temp_label.innerHTML = `${Math.round(low_temp)}&deg`;
+				low_temp_label.className = 'temperature-low';
 
 				temperature_container.append(high_temp_label, low_temp_label);
 				day_container.append(day_label, img, temperature_container);
@@ -136,7 +138,7 @@ class DateUtil {
 		1: 'Mon',
 		2: 'Tue',
 		3: 'Wed',
-		4: 'Thur',
+		4: 'Thu',
 		5: 'Fri',
 		6: 'Sat',
 	};
