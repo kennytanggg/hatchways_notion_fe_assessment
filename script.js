@@ -30,7 +30,6 @@ class App {
 		const response = await fetch(url_5dayforecast);
 		if (response.ok) {
 			let data = await response.json();
-			console.log(data);
 			this.get5DayForecast(data);
 		}
 	}
